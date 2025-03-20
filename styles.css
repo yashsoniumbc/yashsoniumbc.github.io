@@ -1,0 +1,974 @@
+/* ===== STARRY BACKGROUND ANIMATION ===== */
+.stars, .stars2, .stars3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: -1;
+}
+.stars {
+  background: url('https://www.transparenttextures.com/patterns/stardust.png');
+  animation: starsMove 140s linear infinite;
+}
+.stars2 {
+  background: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+  animation: starsMove 180s linear infinite;
+}
+.stars3 {
+  background: url('https://www.transparenttextures.com/patterns/tiny-checkers.png');
+  animation: starsMove 200s linear infinite;
+}
+@keyframes starsMove {
+  from { background-position: 0 0; }
+  to   { background-position: -10000px 10000px; }
+}
+
+/* ===== BASE STYLES ===== */
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: black;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 30px;
+}
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+.social-links a {
+  display: inline-block;
+}
+.icon {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease-in-out;
+}
+.icon:hover {
+  transform: scale(1.2);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #111;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #6a38c7;
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7d50e7;
+}
+html {
+  scrollbar-color: #6a38c7 #111;
+  scrollbar-width: thin;
+}
+
+/* HOMEPAGE SECTION */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1100px;
+  width: 90%;
+  padding: 30px 20px;
+  gap: 50px;
+  min-height: 90vh;
+  text-align: center;
+  margin: 0 auto;
+}
+.content {
+  max-width: 50%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.small-text {
+  font-size: 16px;
+  font-weight: 300;
+  color: #ffffff;
+  margin-top: 10px;
+  margin-bottom: -10px;
+}
+.big-name {
+  font-size: 60px;
+  font-family: 'Fira Code', monospace;
+  font-weight: 700;
+  background: #ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: white;
+  margin-top: 0;
+}
+.tagline {
+  font-size: 22px;
+  margin-top: -20px;
+  color: #d8b4fe !important;
+}
+
+/* Download CV Button */
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 15px;
+  padding: 20px 18px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: transparent;        
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+}
+.download-btn:hover {
+  transform: scale(1.1);
+}
+.pdf-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  object-fit: contain;
+}
+
+/* Profile Picture */
+.profile-pic {
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile-pic img {
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+.profile-pic::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255,255,255,0.6) 10%, rgba(0,0,0,0) 90%);
+  border-radius: 50%;
+  filter: blur(50px);
+}
+
+/* MY JOURNEY TIMELINE */
+.timeline-content {
+  max-width: 900px;
+  width: 90%;
+  margin: 50px auto;
+  padding: 20px;
+  color: white;
+}
+.timeline-content h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: white;
+}
+.timeline {
+  position: relative;
+  padding-left: 25px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 25px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #d8b4fe;
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+  padding-left: 40px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+.timeline-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.timeline-item .dot-icon {
+  position: absolute;
+  left: -16px;
+  top: 0;
+  width: 36px;
+  height: 36px;
+  background: #d8b4fe;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.timeline-item .dot-icon img {
+  width: 70%;
+  height: auto;
+  object-fit: contain;
+}
+.timeline-date {
+  display: block;
+  font-size: 14px;
+  color: #d8b4fe;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.education-logo {
+  position: absolute;
+  left: -110px;
+  top: 0;
+  width: 70px;
+  height: auto;
+}
+.timeline-item h3 {
+  font-size: 22px;
+  margin: 5px 0;
+  color: white;
+}
+.timeline-item h4 {
+  font-size: 18px;
+  font-weight: 300;
+  color: #d8b4fe;
+  margin-bottom: 10px;
+}
+.experience-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+.experience-list li {
+  font-size: 16px;
+  color: #ddd;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+/* SKILL TAGS */
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+.skill-tags span {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  color: #d8b4fe;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+.skill-tags span:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(216, 180, 254, 0.5);
+  background: rgba(216, 180, 254, 0.2);
+}
+.github-button-container {
+  display: block;
+  margin-left: 20px;
+  margin-top: 5px;
+  margin-bottom: 80px;
+}
+.github-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  color: #d8b4fe;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  width: fit-content;
+  line-height: 1.2;
+}
+.github-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(216, 180, 254, 0.5);
+  background: rgba(216, 180, 254, 0.2);
+}
+.github-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* SKILLS SECTION */
+.skills-section {
+  position: relative;
+  max-width: 900px;
+  width: 90%;
+  margin: 30px auto 0 auto;
+  text-align: left;
+  padding: 10px 20px;
+}
+.skills-section::before {
+  content: "";
+  position: absolute;
+  left: 44px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: #d8b4fe;
+}
+.skills-dot-icon {
+  position: absolute;
+  left: 27px;
+  top: 36px;
+  width: 36px;
+  height: 36px;
+  background: #d8b4fe;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.skills-dot-icon img {
+  width: 70%;
+  height: auto;
+  object-fit: contain;
+}
+.skills-section h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 60px;
+}
+.skills-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.skills-list li {
+  margin-bottom: 14px;
+  font-size: 20px;
+  color: #fff;
+  padding-left: 50px;
+}
+.skill-label {
+  white-space: nowrap;
+  font-weight: bold;
+  color: #d8b4fe;
+  margin-right: 8px;
+}
+.colon {
+  font-weight: bold;
+  color: #fff;
+  margin-right: 8px;
+}
+.skill-values {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  white-space: normal;
+}
+.skill-icon {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.skill-icon img {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+  object-fit: contain;
+}
+
+/* CERTIFICATES SECTION */
+.certificates-section {
+  text-align: center;
+  padding: 50px 20px;
+}
+.certificates-section h2 {
+  font-size: 28px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+.certificates-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.certificate-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  transition: transform 0.3s;
+  width: 250px;
+}
+.certificate-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.certificate-card:hover {
+  transform: scale(1.1);
+}
+.certificate-card span {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  margin-top: 10px;
+}
+
+/* PROJECTS SECTION */
+.projects-timeline {
+  position: relative;
+  max-width: 900px;
+  width: 90%;
+  text-align: left;
+  padding: 20px;
+  margin: 50px auto;
+  padding-bottom: 50px;
+}
+.projects-timeline::before {
+  content: "";
+  position: absolute;
+  left: 44px;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background-color: #d8b4fe;
+}
+.projects-timeline h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: white;
+  padding-left: 20px;
+}
+.project-item {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 30px;
+}
+.project-item .project-logo {
+  position: absolute;
+  left: -240px;
+  top: 0px;
+  width: 240px;
+  height: 300px;
+  object-fit: contain;
+}
+.project-item .dot-icon {
+  position: absolute;
+  left: 8px;
+  top: -5px;
+  width: 36px;
+  height: 36px;
+  background: #d8b4fe;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project-item .dot-icon img {
+  width: 70%;
+  height: auto;
+  object-fit: contain;
+}
+.project-item .date {
+  display: block;
+  font-size: 16px;
+  color: #d8b4fe;
+  font-weight: bold;
+  margin-bottom: 5px;
+  padding-left: 20px;
+}
+.project-item h3 {
+  font-size: 22px;
+  margin-bottom: -15px;
+  color: #ffffff;
+  padding-left: 20px;
+}
+.project-item h4 {
+  font-size: 18px;
+  font-weight: 300;
+  color: #d8b4fe;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+.project-list {
+  list-style: none;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+.project-list li {
+  font-size: 16px;
+  color: #ddd;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+.github-button {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  color: #d8b4fe;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-decoration: none;
+  border: none;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  cursor: pointer;
+}
+.github-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(216, 180, 254, 0.5);
+  background: rgba(216, 180, 254, 0.2);
+}
+
+/* CONTACT SECTION */
+.contact-section {
+  position: relative;
+  padding: 80px 20px;
+  font-size: 24px;
+  text-align: center;
+  max-width: 1000px;
+  width: 90%;
+  margin: 80px auto;
+}
+.contact-section .section-title {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #fff;
+}
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  margin: 0 auto;
+}
+.contact-info {
+  flex: 1;
+  text-align: center;
+  color: #fff;
+}
+.contact-info h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #fff;
+}
+.contact-info p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #bbb;
+  margin: 15px 0;
+}
+.icon-small {
+  width: 18px;
+  height: 18px;
+  margin-right: 12px;
+}
+.contact-form {
+  flex: 1;
+  padding: 20px;
+}
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.input-group {
+  display: flex;
+  gap: 10px;
+}
+.input-group input,
+.message-box {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background: #222;
+  color: #fff;
+  font-size: 16px;
+}
+.message-box {
+  height: 100px;
+  resize: none;
+}
+.send-button {
+  background: linear-gradient(45deg, #6a38c7, #7d50e7);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 40%;
+  align-self: flex-start;
+}
+.send-button:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* === RESPONSIVE DESIGN === */
+
+/* Tablets / iPad screens (~992px and below) */
+@media screen and (max-width: 992px) {
+  .big-name {
+    font-size: 50px;
+  }
+  .tagline {
+    font-size: 20px;
+  }
+  .content {
+    max-width: 80%;
+  }
+  .profile-pic img {
+    width: 400px;
+    height: 400px;
+  }
+  .timeline {
+    padding-left: 20px;
+  }
+  .timeline::before {
+    left: 20px;
+  }
+  .timeline-item {
+    padding-left: 40px;
+  }
+  .timeline-item .dot-icon {
+    left: -10px;
+  }
+  .education-logo {
+    left: -80px;
+  }
+  .skills-section::before {
+    left: 30px;
+  }
+  .skills-dot-icon {
+    left: 13px;
+  }
+  .projects-timeline {
+    margin-left: 10px !important;
+  }
+  .projects-timeline::before {
+    left: 34px !important;
+  }
+  .projects-timeline h2 {
+    font-size: 28px;
+  }
+  .project-item {
+    padding-left: 30px;
+  }
+  .project-item .project-logo {
+    left: -180px;
+    width: 180px;
+    height: 220px;
+  }
+  .dot-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .certificates-section h2 {
+    font-size: 20px;
+  }
+}
+
+/* Mobile / smaller phones (~768px and below) */
+@media screen and (max-width: 768px) {
+
+  /* Font sizes for the homepage text */
+  .small-text {
+    font-size: 14px;
+  }
+  .big-name {
+    font-size: 32px !important; /* was 35px, now smaller */
+  }
+  .tagline {
+    font-size: 14px !important; /* was 16px */
+  }
+  /* Paragraph text (the bio) */
+  .content p {
+    font-size: 14px !important;
+  }
+  /* Make the Download CV button smaller */
+  .download-btn {
+    padding: 10px 14px !important; /* reduce padding */
+    font-size: 14px !important;    /* smaller text */
+    border: 2px solid white;
+  }
+
+  /* Hide only the logo, keep social links visible */
+  .logo {
+    display: none !important;
+  }
+  .social-links {
+    display: flex !important;
+    justify-content: flex-end !important;
+    gap: 15px;
+  }
+
+  /* Reduce glow around the profile pic */
+  .profile-pic::before {
+    width: 300px;
+    height: 300px;
+    filter: blur(30px);
+    background: radial-gradient(circle, rgba(255,255,255,0.6) 10%, rgba(0,0,0,0) 90%);
+  }
+
+  /* Home container in a column layout */
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .content {
+    max-width: 90%;
+    align-items: center;
+  }
+  .profile-pic img {
+    width: 300px;
+    height: 300px;
+  }
+
+  /* TIMELINE adjustments */
+  .timeline {
+    padding-left: 10px !important; /* shift the timeline to the left */
+  }
+  .timeline::before {
+    display: none; /* remove vertical line */
+  }
+  .timeline-item {
+    padding-left: 10px !important; /* reduce left padding for each item */
+  }
+  .timeline-item h3 {
+    font-size: 18px !important;
+  }
+  .timeline-item h4 {
+    font-size: 16px !important;
+  }
+  .timeline-item .dot-icon {
+    display: none; /* hide the dot icon */
+  }
+  .education-logo {
+    display: none; /* hide the logo image */
+  }
+  .experience-list li {
+    font-size: 14px !important;
+  }
+
+  /* UMBC (first timeline-item): place skill tags below the heading, no extra left padding */
+  .timeline-item:nth-of-type(1) .skill-tags {
+    margin-top: 8px !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  /* VIT (third timeline-item): also place skill tags under Bachelor's heading, minimal padding */
+  .timeline-item:nth-of-type(3) .skill-tags {
+    margin-top: 8px !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .skills-section{
+    padding-left: 10px;
+  }
+
+  /* TECH SKILLS: hide vertical line & gear icon on mobile */
+  .skills-section::before {
+    display: none !important;
+  }
+  .skills-dot-icon {
+    display: none !important;
+  }
+
+  .skills-list li {
+    padding-left: 40px !important; /* or 10px if you prefer a small indent */
+  }
+
+  /* Also reduce skill or project font sizes if you want them smaller */
+  .skills-list li,
+  .project-list li,
+  .experience-list li {
+    font-size: 14px !important;
+  }
+
+  /* PROJECTS adjustments */
+  .projects-timeline::before {
+    display: none; /* hide vertical line in projects */
+  }
+  .projects-timeline {
+    padding-left: 10px !important;
+  }
+  .project-item {
+    padding-left: 10px !important;
+  }
+  .project-item .dot-icon {
+    display: none;
+  }
+  .project-item .project-logo {
+    position: static;
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto 20px;
+    display: block;
+  }
+  .project-item h3 {
+    font-size: 18px !important;
+  }
+  .project-item h4 {
+    font-size: 16px !important;
+  }
+  .project-list li {
+    font-size: 14px !important;
+  }
+
+  /* Big name & tagline further adjustments */
+  .big-name {
+    font-size: 35px;
+  }
+  .tagline {
+    font-size: 16px;
+  }
+  /* Section titles on mobile */
+  .timeline-content h2,
+  .skills-section h2,
+  .projects-timeline h2,
+  .contact-section h2 {
+    font-size: 22px;
+  }
+
+  /* CONTACT SECTION adjustments */
+  .contact-container {
+    flex-direction: column !important;
+    align-items: center !important;
+    width: auto !important;
+    max-width: 400px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    padding: 20px !important;
+  }
+  .contact-info,
+  .contact-form {
+    width: 100% !important;
+    margin-bottom: 20px !important;
+  }
+  .send-button {
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+  .input-group {
+    flex-direction: column;
+  }
+  .input-group:nth-child(3) {
+    flex-direction: column;
+  }
+}
+/* Very small phones (~480px and below) */
+@media screen and (max-width: 480px) {
+  .big-name {
+    font-size: 30px;
+  }
+  .tagline {
+    font-size: 14px;
+  }
+  .profile-pic img {
+    width: 250px;
+    height: 250px;
+  }
+  .timeline-content h2,
+  .skills-section h2,
+  .projects-timeline h2,
+  .contact-section h2 {
+    font-size: 20px;
+  }
+}
+
+/* ===== PROJECT ITEMS ANIMATION ===== */
+.project-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+.project-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}

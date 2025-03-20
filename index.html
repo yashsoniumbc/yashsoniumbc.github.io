@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yash | Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&family=Fira+Code:wght@700&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Starry Background Wrapper -->
+  <div class="relative min-h-screen bg-black text-white">
+    <!-- Starry Background -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+      <div class="stars"></div>
+      <div class="stars stars2"></div>
+      <div class="stars stars3"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+      <div class="logo">// YS</div>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/yashsoni176" target="_blank" class="social-icon">
+          <img src="Images/linkedin.png" alt="LinkedIn" class="icon" />
+        </a>
+        <a href="https://github.com/yashnitinsoni" target="_blank" class="social-icon">
+          <img src="Images/github.png" alt="GitHub" class="icon" />
+        </a>
+      </div>
+    </header>
+
+    <!-- Homepage Section -->
+    <section class="container">
+      <div class="content">
+        <h2 class="small-text">Hi, I'm</h2>
+        <h1 class="big-name">Yash Soni</h1>
+        <h3 class="tagline">
+          <span class="constant">A</span><span id="typing-text"></span>
+        </h3>
+        <p class="bio">
+          Passionate about data science, I enjoy uncovering insights from data and building models that drive meaningful decisions.
+        </p>
+        <p class="bio">
+          Currently pursuing a Master's in Information Systems at the University of Maryland, Baltimore County.
+        </p>
+        <a href="Data Resume.pdf" class="download-btn" download>
+          <img src="Images/resume.png" alt="PDF Icon" class="pdf-icon" />
+          Download CV
+        </a>
+      </div>
+      <div class="profile-pic">
+        <img src="Images/yash.jpg" alt="Profile Picture" />
+      </div>
+    </section>
+
+    <!-- MY JOURNEY TIMELINE SECTION -->
+    <section class="timeline-content">
+      <h2>MY JOURNEY</h2>
+      <div class="timeline">
+        <!-- Timeline Item: UMBC Education -->
+        <div class="timeline-item">
+          <div class="dot-icon">
+            <img src="Images/education.png" alt="Education Icon" />
+          </div>
+          <img src="Images/UMBC.png" alt="UMBC Logo" class="education-logo" />
+          <span class="timeline-date">January 2024 - Present</span>
+          <h3>University of Maryland, Baltimore County</h3>
+          <h4>Master’s in Information Systems</h4>
+          <div class="skill-tags">
+            <span>Management Information Systems</span>
+            <span>Data Mining</span>
+            <span>Data Analysis for Cybersecurity</span>
+            <span>Decision Making Support Systems</span>
+            <span>Advanced Database Projects</span>
+            <span>Statistical Learning for Data Analysis</span>
+            <span>Structured System Analysis and Design</span>
+            <span>Interfaces For Info. Visualization & Retrieval</span>
+          </div>
+        </div>
+
+        <!-- Timeline Item: Work Experience -->
+        <div class="timeline-item">
+          <div class="dot-icon">
+            <img src="Images/work.svg" alt="Work Icon" />
+          </div>
+          <img src="Images/Harman.png" alt="Harman Logo" class="education-logo" />
+          <span class="timeline-date">May 2022 - June 2023</span>
+          <h3>Harman Connected Services, Pune, India</h3>
+          <h4>Associate Engineer – Product Developer</h4>
+          <ul class="experience-list">
+            <li><strong>Extracted and processed structured data from APIs:</strong> Retrieved and transformed JSON data using Retrofit and Python.</li>
+            <li><strong>Managed and optimized database performance:</strong> Optimized MySQL and Firebase, reducing query time by 30%.</li>
+            <li><strong>Devised automated data workflows:</strong> Developed 10+ Python scripts to clean and validate data.</li>
+            <li><strong>Implemented data validation procedures:</strong> Used SQL constraints to reduce errors by 40%.</li>
+            <li><strong>Collaborated cross-functionally:</strong> Boosted data pipeline efficiency by 25%.</li>
+          </ul>
+          <div class="skill-tags">
+            <span>Python</span>
+            <span>SQL</span>
+            <span>Firebase</span>
+            <span>MySQL</span>
+            <span>APIs</span>
+          </div>
+        </div>
+
+        <!-- Timeline Item: VIT Education -->
+        <div class="timeline-item">
+          <div class="dot-icon">
+            <img src="Images/education.png" alt="Education Icon" />
+          </div>
+          <img src="Images/VIT.png" alt="VIT Logo" class="education-logo" />
+          <span class="timeline-date">August 2018 – July 2022</span>
+          <h3>Vishwakarma Institute of Technology</h3>
+          <h4>Bachelor’s in Computer Science</h4>
+          <div class="skill-tags">
+            <span>Python</span>
+            <span>Data Structures and Algorithms</span>
+            <span>Object Oriented Programming</span>
+            <span>Database Management Systems</span>
+            <span>Java</span>
+            <span>C++</span>
+            <span>HTML, CSS, PHP</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECH STACK SECTION (aligned line + dot) -->
+    <section class="skills-section" id="tech-stack">
+      <!-- Dot Icon for Skills -->
+      <div class="skills-dot-icon">
+        <img src="Images/gear.png" alt="Skills Icon" />
+      </div>
+      <h2>TECHNICAL SKILLS & EXPERTISE</h2>
+      <ul class="skills-list">
+        <li>
+          <span class="skill-label">Programming Languages</span>
+          <span class="colon">:</span>
+          <span class="skill-values">
+            <span class="skill-icon"><img src="Images/cpp.png" alt="C++" />C++</span>,
+            <span class="skill-icon"><img src="Images/python.png" alt="Python" />Python</span>,
+            <span class="skill-icon"><img src="Images/HTML.png" alt="HTML" />HTML</span>,
+            <span class="skill-icon"><img src="Images/CSS.png" alt="CSS" />CSS</span>
+          </span>
+        </li>
+        <li>
+          <span class="skill-label">Frameworks/Technologies</span>
+          <span class="colon">:</span>
+          <span class="skill-values">
+            <span class="skill-icon"><img src="Images/flask.png" alt="Flask" />Flask</span>,
+            <span class="skill-icon"><img src="Images/tensorflow.png" alt="TensorFlow" />TensorFlow</span>
+          </span>
+        </li>
+        <li>
+          <span class="skill-label">Database Systems</span>
+          <span class="colon">:</span>
+          <span class="skill-values">
+            <span class="skill-icon"><img src="Images/mysql.png" alt="MySQL" />MySQL</span>,
+            <span class="skill-icon"><img src="Images/sqlite.png" alt="SQLite" />SQLite</span>,
+            <span class="skill-icon"><img src="Images/snowflake.png" alt="Snowflake" />Snowflake</span>,
+            <span class="skill-icon"><img src="Images/oracle.png" alt="Oracle" />Oracle</span>,
+            <span class="skill-icon"><img src="Images/plsql.png" alt="PL/SQL" />PL/SQL</span>
+          </span>
+        </li>
+        <li>
+          <span class="skill-label">Cloud & AI/ML Technologies</span>
+          <span class="colon">:</span>
+          <span class="skill-values">
+            <span class="skill-icon"><img src="Images/AWS.png" alt="AWS" />AWS (EC2, S3, SageMaker)</span>,
+            <span class="skill-icon"><img src="Images/tableau.png" alt="Tableau" />Tableau</span>
+          </span>
+        </li>
+        <li>
+          <span class="skill-label">Version Control</span>
+          <span class="colon">:</span>
+          <span class="skill-values">
+            <span class="skill-icon"><img src="Images/git.png" alt="Git" />Git</span>,
+            <span class="skill-icon"><img src="Images/github.png" alt="GitHub" />GitHub</span>
+          </span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- CERTIFICATES SECTION -->
+    <section id="certificates" class="certificates-section">
+      <h2>CERTIFICATIONS</h2>
+      <div class="certificates-container">
+        <div class="certificate-card" data-link="https://www.hackerrank.com/certificates/9d57d2fde593">
+          <a href="https://www.hackerrank.com/certificates/9d57d2fde593" target="_blank">
+            <img src="Images/hackerrank.png" alt="Certificate 1" />
+          </a>
+          <span>HackerRank Advanced SQL</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="projects-timeline" id="projects">
+      <h2>PROJECTS</h2>
+      <!-- Project Item 1 -->
+      <div class="project-item">
+        <div class="dot-icon">
+          <img src="Images/project1.png" alt="Project 1 Icon" />
+        </div>
+        <img src="Images/ProjectImage1.jpeg" alt="Project 1 Logo" class="project-logo" />
+        <span class="date">June 2024 - August 2024</span>
+        <h3>AI Nutrition Analyzer</h3>
+        <h4>An AI-powered app that detects food from images and provides real-time nutritional insights.</h4>
+        <ul class="project-list">
+          <li><strong>Tech Stack:</strong> FastAPI, TensorFlow, OpenCV, Streamlit, USDA API</li>
+          <li><strong>Outcome:</strong> Achieved 85% accuracy in food recognition, supports real-time calorie tracking, and successfully tested with 1000+ food images.</li>
+        </ul>
+        <div class="skill-tags">
+          <span>FastAPI</span> <span>TensorFlow</span> <span>OpenCV</span> <span>Streamlit</span> <span>USDA API</span>
+        </div>
+        <div class="github-button-container">
+          <a href="https://github.com/yashnitinsoni/AI-Nutrition-Analyzer" target="_blank" class="github-button">
+            <img src="Images/github.png" alt="GitHub Logo" class="github-icon"> GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Project Item 3 -->
+      <div class="project-item">
+        <div class="dot-icon">
+          <img src="Images/project2.png" alt="Project 3 Icon" />
+        </div>
+        <img src="Images/ProjectImage3.png" alt="Project 3 Logo" class="project-logo" />
+        <span class="date">September 2024 - November 2024</span>
+        <h3>Customer Churn Prediction</h3>
+        <h4>Telecom Churn Prediction Using ML | IBM Telco Dataset | 81.76% Accuracy</h4>
+        <ul class="project-list">
+          <li><strong>Tech Stack:</strong> Python, Scikit-learn, Pandas, NumPy, Matplotlib, Joblib</li>
+          <li><strong>Outcome:</strong> Developed a machine learning model achieving 81.76% accuracy in predicting telecom customer churn, helping businesses improve customer retention strategies.</li>
+        </ul>
+        <div class="skill-tags">
+          <span>Python</span> <span>Scikit-learn</span> <span>Pandas</span> <span>NumPy</span> <span>Matplotlib</span> <span>Joblib</span>
+        </div>
+        <div class="github-button-container">
+          <a href="https://github.com/yashnitinsoni/Customer-Churn-Prediction" target="_blank" class="github-button">
+            <img src="Images/github.png" alt="GitHub Logo" class="github-icon"> GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Project Item 2 -->
+      <div class="project-item">
+        <div class="dot-icon">
+          <img src="Images/project3.png" alt="Project 2 Icon" />
+        </div>
+        <img src="Images/ProjectImage2.png" alt="Project 2 Logo" class="project-logo" />
+        <span class="date">January 2021 - May 2021</span>
+        <h3>Online Proctoring System</h3>
+        <h4>Creating an Automatic Monitoring in Online Proctoring</h4>
+        <ul class="project-list">
+          <li><strong>Tech Stack:</strong> Python, TensorFlow, OpenCV, YOLOv4</li>
+          <li><strong>Outcome:</strong> This project can be used during online exams to remotely monitor the test taker's expression such as eyes, mouth, number of people and mobile phones.</li>
+        </ul>
+        <div class="skill-tags">
+          <span>Python</span> <span>TensorFlow</span> <span>OpenCV</span> <span>YOLOv4</span>
+        </div>
+        <div class="github-button-container">
+          <a href="https://github.com/yashnitinsoni/Online-Proctoring-System" target="_blank" class="github-button">
+            <img src="Images/github.png" alt="GitHub Logo" class="github-icon"> GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Project Item 4 -->
+      <div class="project-item">
+        <div class="dot-icon">
+          <img src="Images/project4.png" alt="Project 2 Icon" />
+        </div>
+        <img src="Images/ProjectImage4.png" alt="Project 2 Logo" class="project-logo" />
+        <span class="date">August 2020 - December 2020</span>
+        <h3>MNC Employee Workflow Management System</h3>
+        <h4>Streamlining Employee Workflow in Multinational Corporations</h4>
+        <ul class="project-list">
+          <li><strong>Tech Stack:</strong> HTML, CSS, JavaScript, PHP, MySQL</li>
+          <li><strong>Outcome:</strong> Developed a demo website to manage employee workflows, including features like employee management, leave applications, project assignments, and profile management, enhancing operational efficiency in MNCs.</li>
+        </ul>
+        <div class="skill-tags">
+          <span>HTML</span> <span>CSS</span> <span>JavaScript</span> <span>PHP</span> <span>MySQL</span>
+        </div>
+        <div class="github-button-container">
+          <a href="https://github.com/yashnitinsoni/MNC-Website" target="_blank" class="github-button">
+            <img src="Images/github.png" alt="GitHub Logo" class="github-icon"> GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+      <h2 class="section-title">GET IN TOUCH</h2>
+      <div class="contact-container">
+        <!-- Left: Contact Info -->
+        <div class="contact-info">
+          <h3>Yash Soni</h3>
+          <p>
+            <img src="Images/email.png" class="icon-small" alt="Email" />
+            yashnitinsoni.17@gmail.com
+          </p>
+          <p>
+            <img src="Images/phone.png" class="icon-small" alt="Phone" />
+            +1 (667)-320-5799
+          </p>
+          <p>
+            <img src="Images/location.png" class="icon-small" alt="Location" />
+            Maryland, United States
+          </p>
+        </div>
+    
+        <!-- Right: Contact Form -->
+        <div class="contact-form">
+          <form id="contact-form" action="https://formspree.io/f/xdkekepd" method="POST">
+            <div class="input-group">
+              <input type="text" name="first_name" placeholder="First Name" required />
+              <input type="text" name="last_name" placeholder="Last Name" required />
+            </div>
+            <div class="input-group">
+              <input type="email" name="email" placeholder="Your Email" required />
+              <input type="tel" name="phone" placeholder="Phone Number" required />
+            </div>
+            <textarea class="message-box" name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="send-button">Send Message</button>
+            <p id="form-message" style="display: none; color: #d8b4fe; font-weight: bold; margin-top: 10px;">
+              Message sent successfully!
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
